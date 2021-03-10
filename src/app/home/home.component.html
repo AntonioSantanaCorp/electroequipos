@@ -1,0 +1,70 @@
+<div
+  style="
+    display: flex;
+    justify-content: center;
+    grid-gap: 65px;
+    flex-flow: row wrap;
+    margin-top: 7em;
+  "
+>
+  <mat-card class="a-menu-card" style="border: 1px solid lightgray">
+    <mat-card-header>
+      <div mat-card-avatar class="a-menu-header-image"></div>
+      <mat-card-title>El Tiempo</mat-card-title>
+      <mat-card-subtitle>Novedades tecnologicas</mat-card-subtitle>
+    </mat-card-header>
+    <img
+      mat-card-image
+      src="https://img.freepik.com/foto-gratis/hombre-negocios-usando-dispositivos-tecnologia-e-iconos-interfaz-linea-delgada_117023-904.jpg?size=626&ext=jpg"
+      alt="Photo of a Shiba Inu"
+    />
+    <mat-card-content>
+      <p>
+        Dando click en el boton inferior se visualizaran las ultimas novedades
+        tecnologicas segun la revista el Tiempo dado el link
+        https://www.eltiempo.com/tecnosfera/novedades-tecnologia
+      </p>
+    </mat-card-content>
+    <mat-card-actions style="display: flex; justify-content: center">
+      <button
+        mat-fab
+        color="primary"
+        matTooltip="Ir scrapping tiempo"
+        [routerLink]="['scrapping', 'tiempo']"
+      >
+        <span class="material-icons"> language </span>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="a-menu-card" style="border: 1px solid lightgray">
+    <mat-card-header>
+      <div mat-card-avatar class="a-menu-header-image-tienda"></div>
+      <mat-card-title>Tienda Virtual</mat-card-title>
+      <mat-card-subtitle>Simula una tienda virtual</mat-card-subtitle>
+    </mat-card-header>
+
+    <img
+      class="img-tienda"
+      mat-card-image
+      src="https://www.lancetalent.com/blog/wp-content/uploads/shopping4.png"
+    />
+
+    <mat-card-content>
+      <p>
+        Dando click en el boton inferior se visualizaran la simulacion de una
+        tienda virtual, como plus la tienda online es resposive
+      </p>
+    </mat-card-content>
+    <mat-card-actions style="display: flex; justify-content: center">
+      <button
+        mat-fab
+        color="primary"
+        matTooltip="Ir tienda virtual"
+        [routerLink]="['tiendavirtual', 'listaproductos']"
+      >
+        <span class="material-icons"> language </span>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

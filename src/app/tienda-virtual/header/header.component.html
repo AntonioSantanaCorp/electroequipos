@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+  <div
+    style="
+      display: grid;
+      grid-template-columns: 1fr auto auto auto;
+      width: 100%;
+      align-items: center;
+    "
+  >
+    <a href="" [routerLink]="['/']">
+      <span>Tienda virtual</span>
+    </a>
+    <button
+      [routerLink]="['listaproductos']"
+      mat-icon-button
+      matTooltip="Ir tienda"
+    >
+      <span class="material-icons"> shopping_bag </span>
+    </button>
+    <button
+      [routerLink]="['resumencompra']"
+      mat-raised-button
+      [matBadge]="cantidadCompra"
+      matBadgeColor="warn"
+    >
+      <span>Carrito</span>
+      <span class="material-icons"> shopping_cart </span>
+    </button>
+  </div>
+</mat-toolbar>

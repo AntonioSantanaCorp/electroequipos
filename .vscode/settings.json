@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.deploySubpath": ".",
+    "appService.defaultWebAppToDeploy": "/subscriptions/9dcdddad-e037-45cf-bb5b-9b21367e12a4/resourceGroups/apiNodejs/providers/Microsoft.Web/sites/electroequipos"
+}

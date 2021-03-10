@@ -1,0 +1,94 @@
+<div style="display: flex; justify-content: center; flex-direction: column">
+  <h1
+    *ngIf="!carritoCompras.length; else tablaProductos"
+    style="text-align: center"
+  >
+    No hay productos en el carrito
+  </h1>
+  <ng-template #tablaProductos>
+    <table mat-table [dataSource]="carritoCompras" class="mat-elevation-z8">
+      <ng-container matColumnDef="img">
+        <th mat-header-cell *matHeaderCellDef style="width: 17%">Producto</th>
+        <td mat-cell *matCellDef="let element" style="width: 17%">
+          <img [src]="element.imagen" style="width: 161px; height: 132px" />
+        </td>
+        <td mat-footer-cell *matFooterCellDef colspan="4">
+          <strong>Total</strong>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="titulo">
+        <th mat-header-cell *matHeaderCellDef>Titulo</th>
+        <td mat-cell *matCellDef="let element">{{ element.titulo }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="precio">
+        <th mat-header-cell *matHeaderCellDef>Precio</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.precio | currency }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="cantidad">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center">
+          Cantidad
+        </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center">
+          <div style="display: grid">
+            <span #valor>{{ element.cantidad }}</span>
+            <div>
+              <button
+                [disabled]="valor.textContent == '1'"
+                (click)="quitarElemento(element.id)"
+                mat-icon-button
+                color="primary"
+              >
+                <span class="material-icons"> remove </span>
+              </button>
+              <button
+                (click)="agregarElemento(element)"
+                mat-icon-button
+                color="primary"
+              >
+                <span class="material-icons"> add </span>
+              </button>
+            </div>
+          </div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quitar">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center">
+          Eliminar
+        </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center">
+          <button
+            (click)="eliminarCarrito(element.id)"
+            mat-mini-fab
+            color="warn"
+          >
+            <span class="material-icons"> delete </span>
+          </button>
+        </td>
+        <td mat-footer-cell *matFooterCellDef style="text-align: center">
+          <strong>{{ totalCompra | currency }}</strong>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+      <tr mat-row *matRowDef="let row; columns: columnas"></tr>
+      <tr mat-footer-row *matFooterRowDef="footer"></tr>
+    </table>
+
+    <div style="text-align: center; margin: 15px 0">
+      <button
+        (click)="realizarCompra()"
+        mat-fab
+        color="primary"
+        matTooltip="Realizar compra"
+      >
+        <span class="material-icons"> add_task </span>
+      </button>
+    </div>
+  </ng-template>
+</div>

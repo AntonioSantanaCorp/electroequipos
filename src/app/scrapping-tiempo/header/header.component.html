@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+  <div
+    style="
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      width: 100%;
+      align-items: center;
+    "
+  >
+    <a href="" [routerLink]="['/']">
+      <span>Scrapping el Tiempo</span>
+    </a>
+    <button
+      mat-icon-button
+      (click)="ordenarListaTiempo()"
+      [disabled]="cargandoScrappingTiempo"
+    >
+      <span class="material-icons">
+        {{ ordenarAsc ? "arrow_circle_down" : "arrow_circle_up" }}
+      </span>
+    </button>
+    <button
+      mat-icon-button
+      (click)="listarNovedadesTiempo()"
+      [disabled]="cargandoScrappingTiempo"
+    >
+      <span class="material-icons"> update </span>
+    </button>
+  </div>
+</mat-toolbar>

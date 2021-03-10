@@ -1,0 +1,30 @@
+<div class="cont-producto">
+  <div style="margin-top: -34px; padding: 0px 30px">
+    <img
+      style="
+        height: 256.92px;
+        width: 100%;
+        border-radius: 5px;
+        max-width: 380px;
+      "
+      [src]="producto.imagen"
+    />
+  </div>
+  <div style="font-size: 1.125rem">
+    {{ producto.titulo }}
+  </div>
+  <div style="font-size: 0.875rem; padding: 0 15px; text-align: justify">
+    <p>{{ producto.descripcion }}</p>
+    <p>Precio: {{ producto.precio| currency}}</p>
+  </div>
+  <div style="border-top: 1px solid #eee; margin: 0px 13px; padding: 10px 0px">
+    <button
+      mat-mini-fab
+      color="primary"
+      matTooltip="Agregar al carrito"
+      (click)="agregarCarrito()"
+    >
+      <span class="material-icons"> add_shopping_cart </span>
+    </button>
+  </div>
+</div>
